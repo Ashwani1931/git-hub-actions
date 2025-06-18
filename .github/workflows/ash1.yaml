@@ -1,6 +1,6 @@
 name: this is first yaml
 on: 
-   push:
+   workflow_dispatch:
 jobs:
      testing:
         name: Testing files
