@@ -13,4 +13,3 @@ jobs:
                      echo "welcome to github actions"
                      ls -la
                      cat index.html
-                     
