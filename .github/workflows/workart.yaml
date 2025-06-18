@@ -1,0 +1,17 @@
+name: workart
+on:
+   workflow_dispatch:
+jobs:
+  first:
+       name: workart ascii
+       runs-on: ubuntu-latest
+       steps:
+         - name: installation
+           run: sudo apt install -y cowsay
+         - name: run cmds
+           run: cowsay -f dragon "this is dragon" >> dragon.txt
+         - name: read files
+           run: |
+                 ls -la
+                 cat dragon.txt
+                 grep -i dragon dragon.txt
