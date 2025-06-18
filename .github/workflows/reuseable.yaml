@@ -1,0 +1,18 @@
+name: resuse workflow 
+on:
+   workflow_call:
+jobs:
+  reuseable:
+    name: reuseablefile
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: creating docker container
+        run: docker pull httpd
+      - name: verify image
+        run: docker images
+      - name: creating a container
+        run: docker run -itd --name apache2 -p 8080:80 httpd
+      - name: verify
+        run: curl http://localhost:8080
