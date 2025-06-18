@@ -9,6 +9,6 @@ jobs:
       - name: pull the image of apache2
         run: docker pull httpd
       - name: create container with httpd
-        run: docker run -itd --name apache2 httpd
+        run: docker run -itd --name apache2 -p 8080:80 httpd
       - name: verify 
-        run: curl http://localhost:80  
+        run: curl http://localhost:8080  
